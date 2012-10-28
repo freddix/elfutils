@@ -1,7 +1,7 @@
 Summary:	A collection of utilities and DSOs to handle compiled objects
 Name:		elfutils
 Version:	0.154
-Release:	1
+Release:	2
 License:	GPL v2 with OSL linking exception
 Group:		Development/Tools
 Source0:	https://fedorahosted.org/releases/e/l/elfutils/%{version}/%{name}-%{version}.tar.bz2
@@ -14,7 +14,7 @@ Patch4:		%{name}-xlatetom.patch
 URL:		https://fedorahosted.org/elfutils/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gettext-devel
+BuildRequires:	gettext
 BuildRequires:	libltdl-devel
 BuildRequires:	perl-tools-pod
 Requires:	%{name}-libelf = %{version}-%{release}
@@ -110,11 +110,11 @@ install debian/man/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p /sbin/ldconfig
-%postun	-p /sbin/ldconfig
+%post	-p /usr/sbin/ldconfig
+%postun	-p /usr/sbin/ldconfig
 
-%post	libelf -p /sbin/ldconfig
-%postun	libelf -p /sbin/ldconfig
+%post	libelf -p /usr/sbin/ldconfig
+%postun	libelf -p /usr/sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
