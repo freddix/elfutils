@@ -1,16 +1,12 @@
 Summary:	A collection of utilities and DSOs to handle compiled objects
 Name:		elfutils
-Version:	0.154
-Release:	2
+Version:	0.159
+Release:	1
 License:	GPL v2 with OSL linking exception
 Group:		Development/Tools
 Source0:	https://fedorahosted.org/releases/e/l/elfutils/%{version}/%{name}-%{version}.tar.bz2
-# Source0-md5:	e5b26ceaee67db40e742f13052087354
+# Source0-md5:	1f45a18231c782ccd0966059e2e42ea9
 Patch0:		%{name}-debian-manpages.patch
-Patch1:		%{name}-portability.patch
-Patch2:		%{name}-robustify.patch
-Patch3:		%{name}-binutils-pr-ld-13621.patch
-Patch4:		%{name}-xlatetom.patch
 URL:		https://fedorahosted.org/elfutils/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -68,10 +64,6 @@ package use it also to generate new ELF files.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
-%patch2 -p1
-%patch3 -p1
-%patch4 -p1
 
 %build
 %{__libtoolize}
