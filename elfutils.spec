@@ -1,7 +1,8 @@
+# based on PLD Linux spec git://git.pld-linux.org/packages/elfutils.git
 Summary:	A collection of utilities and DSOs to handle compiled objects
 Name:		elfutils
 Version:	0.159
-Release:	1
+Release:	2
 License:	GPL v2 with OSL linking exception
 Group:		Development/Tools
 Source0:	https://fedorahosted.org/releases/e/l/elfutils/%{version}/%{name}-%{version}.tar.bz2
